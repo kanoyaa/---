@@ -484,3 +484,167 @@ h1 {
     font-size: 1.6em;
     font-weight: 700;
 }
+
+/* ============================================================
+   АДАПТИВНОСТЬ
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* background-attachment: fixed не работает на iOS */
+    body::before {
+        background-attachment: scroll;
+    }
+
+    /* --- Навигация --- */
+
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 12px 0 0;
+    }
+
+    .logo-container {
+        position: static;
+        transform: none;
+        height: auto;
+        padding: 0 16px;
+    }
+
+    .logo-img {
+        height: 80px;
+    }
+
+    .nav-list {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 8px 0 0;
+    }
+
+    .nav-link {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    /* --- Контактный блок в шапке --- */
+
+    .contact-info {
+        position: static;
+        text-align: center;
+        font-size: 15px;
+        padding: 12px 16px;
+        min-width: auto;
+    }
+
+    /* --- Контент --- */
+
+    .content {
+        padding: 24px 16px;
+    }
+
+    .content--home {
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 1.8em;
+        margin-top: 24px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15em;
+    }
+
+    /* --- О компании --- */
+
+    .content--about {
+        flex-direction: column;
+    }
+
+    .content-text {
+        max-width: 100%;
+    }
+
+    .content-photo {
+        flex: none;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 24px;
+        justify-content: center;
+    }
+
+    .content-photo img {
+        margin-top: 0;
+        max-width: 100%;
+    }
+
+    /* --- Подвал --- */
+
+    .footer,
+    .footer--home,
+    .footer--about,
+    .footer--calc {
+        height: auto;
+        padding: 32px 16px;
+    }
+
+    .footer-inner {
+        position: static;
+    }
+
+    .footer-logo {
+        display: block;
+        height: 120px;
+        margin: 0 auto 24px;
+    }
+
+    .footer-address {
+        position: static;
+        font-size: 0.9em;
+        margin-bottom: 16px;
+    }
+
+    .footer-requisites {
+        position: static;
+        font-size: 0.9em;
+        margin-top: 16px;
+    }
+
+    .contact-info2 {
+        position: static;
+        text-align: left;
+        font-size: 15px;
+        padding: 16px 0 0;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* --- Навигация: ссылки в столбик --- */
+
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .nav-link {
+        text-align: center;
+        padding: 12px 16px;
+    }
+
+    /* --- Типографика --- */
+
+    .hero-title {
+        font-size: 1.4em;
+    }
+
+    .hero-subtitle {
+        font-size: 1em;
+    }
+
+    .about-text {
+        font-size: 1em;
+    }
+}
