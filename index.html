@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ПАРТНЁР-ЭКСПРЕСС Главная</title>
-    
+
     <!-- Подключение шрифта Open Sans с Google Fonts -->
     <link href="https://googleapis.com" rel="stylesheet">
-    
+
     <style>
         body {
             position: relative;
@@ -15,7 +15,7 @@
             margin: 0;
             z-index: 0;
         }
-        
+
         /* Карточка с контактами (оригинал) */
         .contact-card {
             background: #fff;
@@ -48,14 +48,14 @@
             height: 100vh;
             z-index: -1;
             /* Фоновое изображение без оранжевого градиента */
-            background: url('/images/back.jpg');
+            background: url('images/back.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
             background-attachment: fixed;
             opacity: 0.4; /* Прозрачность всей композиции */
             pointer-events: none;
-       
+
         }
 
         .navbar {
@@ -215,7 +215,7 @@
                 if (!navbar.querySelector('.logo-container')) {
                     const logoContainer = document.createElement('div');
                     logoContainer.className = 'logo-container';
-                    logoContainer.style.left = '-8px'; 
+                    logoContainer.style.left = '-8px';
 
                     // Добавляем ссылку вокруг логотипа
                     const logoLink = document.createElement('a');
@@ -242,72 +242,79 @@
 </head>
 <body>
 
-    <!-- Навигационная панель -->
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
-            <li class="nav-item"><a href="description.html" class="nav-link">О Компании</a></li>
-            <li class="nav-item"><a href="calculator.html" class="nav-link">Калькулятор</a></li>
-        </ul>
-    </nav>
+<!-- Навигационная панель -->
+<nav class="navbar">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="description.html" class="nav-link">О Компании</a></li>
+        <li class="nav-item"><a href="calculator.html" class="nav-link">Калькулятор</a></li>
+    </ul>
+</nav>
 
-    <!-- Контактная информация вверху -->
-    <div class="contact-info">
-        Позвоните нам<br>
-        +7 (913)-917-06-26<br>
-        +7 (383)-299-06-26
+<!-- Контактная информация вверху -->
+<div class="contact-info">
+    Позвоните нам<br>
+    +7 (913)-917-06-26<br>
+    +7 (383)-299-06-26
+</div>
+
+<!-- Основной контент страницы -->
+<div class="content"
+     style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px;">
+    <h1 style="font-size: 2.7em; text-align: center; color: rgb(0, 0, 0); margin-top: 56px;">
+        Логистическая компания ПАРТНЁР-ЭКСПРЕСС
+    </h1>
+    <p style="font-size: 1.6em; text-align: center; margin-top: 10px;">
+        Авиа и Авто доставка грузов на Север <br>
+        Регулярная круглогодичная доставка грузов в Мирный, Удачный, Айхал
+    </p>
+
+    <div style="text-align: center; margin-top: 28px;">
+        <a href="#" class="nav-link"
+           style="font-size: 1.1em; padding: 10px 24px; background: #1565c0; border-radius: 5px; color: #fff; text-decoration: none; display: inline-block; outline: none; box-shadow: none;"
+           onclick="event.preventDefault(); document.querySelectorAll('.nav-link')[1].click();">
+            Узнать больше о компании &rarr;
+        </a>
     </div>
 
-    <!-- Основной контент страницы -->
-    <div class="content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px;">
-        <h1 style="font-size: 2.7em; text-align: center; color: rgb(0, 0, 0); margin-top: 56px;">
-            Логистическая компания ПАРТНЁР-ЭКСПРЕСС
-        </h1>
-        <p style="font-size: 1.6em; text-align: center; margin-top: 10px;">
-            Авиа и Авто доставка грузов на Север <br>
-            Регулярная круглогодичная доставка грузов в Мирный, Удачный, Айхал
-        </p>
-        
-        <div style="text-align: center; margin-top: 28px;">
-            <a href="#" class="nav-link" style="font-size: 1.1em; padding: 10px 24px; background: #1565c0; border-radius: 5px; color: #fff; text-decoration: none; display: inline-block; outline: none; box-shadow: none;"
-               onclick="event.preventDefault(); document.querySelectorAll('.nav-link')[1].click();">
-                Узнать больше о компании &rarr;
-            </a>
-        </div>
-        
-        <!-- Блок для удобного редактирования и размещения текста -->
-        <div class="text-workspace" style="min-height:400px; width:100%; padding: 24px; box-sizing: border-box;">
-            <!-- Сюда в дальнейшем можно будет вставить структуру калькулятора -->
-        </div>
+    <!-- Блок для удобного редактирования и размещения текста -->
+    <div class="text-workspace" style="min-height:400px; width:100%; padding: 24px; box-sizing: border-box;">
+        <!-- Сюда в дальнейшем можно будет вставить структуру калькулятора -->
     </div>
+</div>
 
-    <!-- Подвал страницы -->
-    <div style="height: 500px; width: 100%; background: #fff; position: relative;">
-        <div style="position: absolute; top: -100px; left: 24px;">
-            <img src="/images/partner-logo.png" alt="Партнёр-Экспресс Логотип (правый верхний угол)" style="height: 400px; font-family: 'Open Sans', sans-serif;">
-            
-            <div style="font-size: 0.82em; color: #222; position: absolute; top: 250px; left: 55px; font-family: 'Open Sans', sans-serif; text-align: left; line-height: 2;">
-                <div style="margin-top: 0;"><b>Новосибирск</b></div>
-                <div style="margin-top: 7px;"><b>Офис:</b> 630005, Новосибирская обл, Новосибирск г, Некрасова ул, д. 48, оф. 106</div>
-                <div style="margin-top: 7px;"><b>Склад:</b> 630005, Новосибирская обл, Новосибирск г, Панфиловцев ул, д. 73/1, оф. 22</div>
+<!-- Подвал страницы -->
+<div style="height: 500px; width: 100%; background: #fff; position: relative;">
+    <div style="position: absolute; top: -100px; left: 24px;">
+        <img src="images/partner-logo.png" alt="Партнёр-Экспресс Логотип (правый верхний угол)"
+             style="height: 400px; font-family: 'Open Sans', sans-serif;">
+
+        <div style="font-size: 0.82em; color: #222; position: absolute; top: 250px; left: 55px; font-family: 'Open Sans', sans-serif; text-align: left; line-height: 2;">
+            <div style="margin-top: 0;"><b>Новосибирск</b></div>
+            <div style="margin-top: 7px;"><b>Офис:</b> 630005, Новосибирская обл, Новосибирск г, Некрасова ул, д. 48,
+                оф. 106
             </div>
-            
-            <div style="position: absolute; top: 250px; left: 450px; font-size: 0.82em; color: #222; font-family: 'Open Sans', sans-serif; text-align: left; line-height: 2;">
-                <div style="margin-top: 0; white-space: nowrap;"><b>ОГРН:</b> 1105476029064</div>
-                <div style="margin-top: 8px;"><b>КПП:</b> <span style="white-space: nowrap;">540601001</span></div>
-                <div style="margin-top: 8px;"><b>ИНН:</b> <span style="white-space: nowrap;">5407454536</span></div>
-                
-                <div class="contact-info2">
-                    Позвоните нам<br>
-                    +7 (913)-917-06-26<br>
-                    +7 (383)-299-06-26<br><br>
-                    avto_sever@mail.ru<br>
-                    partner-express18@mail.ru
-                </div>
-                </div>
+            <div style="margin-top: 7px;"><b>Склад:</b> 630005, Новосибирская обл, Новосибирск г, Панфиловцев ул, д.
+                73/1, оф. 22
             </div>
         </div>
+
+        <div style="position: absolute; top: 250px; left: 450px; font-size: 0.82em; color: #222; font-family: 'Open Sans', sans-serif; text-align: left; line-height: 2;">
+            <div style="margin-top: 0; white-space: nowrap;"><b>ОГРН:</b> 1105476029064</div>
+            <div style="margin-top: 8px;"><b>КПП:</b> <span style="white-space: nowrap;">540601001</span></div>
+            <div style="margin-top: 8px;"><b>ИНН:</b> <span style="white-space: nowrap;">5407454536</span></div>
+
+            <div class="contact-info2">
+                Позвоните нам<br>
+                +7 (913)-917-06-26<br>
+                +7 (383)-299-06-26<br><br>
+                avto_sever@mail.ru<br>
+                partner-express18@mail.ru
+            </div>
+        </div>
     </div>
+</div>
+</div>
 
 </body>
 </html>

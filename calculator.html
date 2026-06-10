@@ -1,365 +1,397 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Логистика — Главная</title>
- <style>
- body {
- position: relative;
- min-height: 100vh;
- margin: 0;
- z-index: 0;
- 
- }
- /* Карточка с контактами (оригинал) */
- .contact-card {
- background: #fff;
- border-radius: 16px;
- box-shadow: 0 4px 32px rgba(44, 44, 44, 0.07), 0 2px 8px rgba(30, 30, 30, 0.06);
- padding: 32px 28px;
- max-width: 420px;
- margin: 36px auto 0 auto;
- font-family: 'Open Sans', sans-serif;
- font-size: 1.1em;
- color: #222;
- line-height: 1.8;
- position: relative;
- z-index: 5;
- }
- .contact-card-title {
- font-size: 1.37em;
- font-weight: 600;
- margin-bottom: 14px;
- color: #234567;
- 
- }
- body::before {
- content: "";
- position: fixed;
- top: 0;
- left: 0;
- width: 100vw;
- height: 100vh;
- z-index: -1;
- /* Полупрозрачная оранжевая "вуаль" поверх фоновой картинки */
- background: 
- linear-gradient(
- rgba(255, 140, 0, 0.3), 
- rgba(255, 140, 0, 0.3)
- ),
- url('/back.jpg');
- background-size: cover;
- background-repeat: no-repeat;
- background-position: center center;
- background-attachment: fixed;
- opacity: 1; /* пусть вся композиция видна */
- pointer-events: none;
- }
- body::before {
- content: "";
- position: fixed;
- top: 0;
- left: 0;
- width: 100vw;
- height: 100vh;
- background-image: url('/images/back.jpg');
- background-size: cover;
- background-repeat: no-repeat;
- background-position: center center;
- background-attachment: fixed;
- opacity: 0.4; /* Настройте прозрачность здесь */
- z-index: -1;
- }
- .navbar {
- background-color: #ffffff !important; /* Белый фон */
- }
- .nav-link {
- color: #000000 !important; /* Чёрный текст */
- }
- .nav-link:hover {
- background-color: #f0f0f0 !important; /* Светло-серый при наведении (необязательно) */
- }
- <!-- Карточка для блока внизу удалена по запросу 
-</style>
- <meta charset="UTF-8">
- <!-- Подключение шрифта Open Sans с Google Fonts -->
- <link href="https://googleapis.com" 
-rel="stylesheet">
- <style>
- body, html {
- font-family: 'Open Sans', Arial, sans-serif !important;
- }
- </style>
- 
- <meta charset="UTF-8">
- <style>
- .contact-info {
- position: absolute;
- right: 32px;
- top: 0;
- color: #000000;
- padding: 18px 24px;
- border-radius: 12px;
- font-size: 18px;
- font-weight: bold;
- line-height: 1.6;
- text-align: right;
- z-index: 20;
- min-width: 250px;
- }
- .contact-info-bottom {
- position: fixed;
- right: 32px;
- bottom: 60px;
- color: #000000;
- padding: 18px 24px;
- border-radius: 12px;
- font-size: 18px;
- font-weight: bold;
- line-height: 1.6;
- text-align: right;
- z-index: 999;
- min-width: 250px;
- max-width: 350px;
- margin: 0;
- }
- .contact-info2 {
- position: absolute;
- right: -1270px;
- top: -100px;
- color: #000000;
- padding: 18px 24px;
- border-radius: 12px;
- font-size: 18px;
- font-weight: bold;
- line-height: 1.6;
- text-align: right;
- z-index: 20;
- min-width: 250px;
- }
- /* Расширяем страницу вниз на 400px */
- body {
- min-height: calc(100vh + 400px) !important;
- }
- </style>
- <style>
- body {
- font-family: Arial, sans-serif;
- margin: 0;
- background-color: #f4f8fb;
- }
- .navbar {
- background-color: #234567;
- padding: 0;
- margin: 0;
- height: 140px;
- display: flex;
- align-items: center;
- justify-content: center;
- position: relative;
- }
- .logo-container {
- position: absolute;
- left: 28px;
- top: 50%;
- transform: translateY(-50%);
- height: 115px;
- display: flex;
- align-items: center;
- }
- .logo-img {
- height: 105px;
- width: auto;
- object-fit: contain;
- }
- .nav-list {
- display: flex;
- list-style: none;
- padding: 0;
- margin: 0;
- width: 100%;
- justify-content: center;
- align-items: center;
- height: 100%;
- }
- .nav-item {
- margin: 0;
- }
- .nav-link {
- display: block;
- padding: 28px 56px;
- color: #ffffff;
- text-decoration: none;
- font-weight: 500;
- transition: background 0.2s;
- font-size: 24px;
- }
- .nav-link:hover {
- background-color: #466889;
- }
- .content {
- padding: 40px 24px;
- max-width: 880px;
- margin: 0 auto;
- }
- h1 {
- color: #234567;
- }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логистика — Главная</title>
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            z-index: 0;
 
- /* --- СТИЛИЗАЦИЯ ИНТЕГРИРОВАННОГО КАЛЬКУЛЯТОРА --- */
- .calc-card {
- background: #ffffff;
- border-radius: 14px;
- box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
- padding: 28px;
- width: 100%;
- max-width: 480px;
- box-sizing: border-box;
- font-family: 'Open Sans', Arial, sans-serif;
- margin: 10px auto 0 auto;
- border: 1px solid #eef2f5;
- }
- .calc-title {
- font-size: 1.35em;
- font-weight: 700;
- color: #234567;
- margin-top: 0;
- margin-bottom: 22px;
- text-align: center;
- }
- .calc-group {
- margin-bottom: 16px;
- }
- .calc-group label {
- display: block;
- margin-bottom: 6px;
- font-size: 0.95em;
- font-weight: 600;
- color: #222222;
- text-align: left;
- }
- .calc-select, .calc-input {
- width: 100%;
- padding: 11px 14px;
- border: 1px solid #cccccc;
- border-radius: 8px;
- font-size: 15px;
- box-sizing: border-box;
- background-color: #ffffff;
- color: #333333;
- transition: border-color 0.2s;
- }
- .calc-select:focus, .calc-input:focus {
- outline: none;
- border-color: #1565c0;
- }
- .calc-checkbox-label {
- display: flex;
- align-items: center;
- cursor: pointer;
- font-size: 0.95em;
- font-weight: 600;
- color: #222222;
- user-select: none;
- }
- .calc-checkbox {
- margin-right: 12px;
- width: 19px;
- height: 19px;
- cursor: pointer;
- }
- .calc-btn {
- width: 100%;
- background-color: #1565c0;
- color: #ffffff;
- border: none;
- padding: 13px;
- border-radius: 8px;
- font-size: 1.05em;
- font-weight: 600;
- cursor: pointer;
- transition: background 0.2s;
- margin-top: 10px;
- }
- .calc-btn:hover {
- background-color: #0d47a1;
- }
- .calc-result {
- margin-top: 22px;
- padding: 14px;
- background-color: #e8f5e9;
- border: 1px solid #c8e6c9;
- border-radius: 8px;
- text-align: center;
- display: none;
- }
- .calc-result-title {
- color: #2e7d32;
- font-size: 0.95em;
- margin-bottom: 4px;
- font-weight: 500;
- }
- .calc-result-value {
- color: #1b5e20;
- font-size: 1.6em;
- font-weight: 700;
- }
- </style>
- <!-- Добавление логотипа компании -->
- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            if (!navbar.querySelector('.logo-container')) {
-                const logoContainer = document.createElement('div');
-                logoContainer.className = 'logo-container';
-                logoContainer.style.left = '-8px'; 
-
-                // Добавляем ссылку вокруг логотипа
-                const logoLink = document.createElement('a');
-                logoLink.href = "index.html";
-                logoLink.style.display = 'inline-block';
-                logoLink.style.cursor = 'pointer';
-                // По желанию: чтобы не было лишних эффектов при фокусе и visited:
-                logoLink.style.outline = 'none';
-                logoLink.style.textDecoration = 'none';
-
-                const img = document.createElement('img');
-                img.src = '/images/partner-logo.png';
-                img.alt = 'Партнёр-Экспресс Логотип';
-                img.className = 'logo-img';
-                img.style.height = '400px';
-
-                logoLink.appendChild(img);
-                logoContainer.appendChild(logoLink);
-                navbar.appendChild(logoContainer);
-            }
         }
-    });
-</script>
+
+        /* Карточка с контактами (оригинал) */
+        .contact-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(44, 44, 44, 0.07), 0 2px 8px rgba(30, 30, 30, 0.06);
+            padding: 32px 28px;
+            max-width: 420px;
+            margin: 36px auto 0 auto;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.1em;
+            color: #222;
+            line-height: 1.8;
+            position: relative;
+            z-index: 5;
+        }
+
+        .contact-card-title {
+            font-size: 1.37em;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: #234567;
+
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            /* Полупрозрачная оранжевая "вуаль" поверх фоновой картинки */
+            background: linear-gradient(
+                    rgba(255, 140, 0, 0.3),
+                    rgba(255, 140, 0, 0.3)
+            ),
+            url('/back.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            opacity: 1; /* пусть вся композиция видна */
+            pointer-events: none;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('images/back.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            opacity: 0.4; /* Настройте прозрачность здесь */
+            z-index: -1;
+        }
+
+        .navbar {
+            background-color: #ffffff !important; /* Белый фон */
+        }
+
+        .nav-link {
+            color: #000000 !important; /* Чёрный текст */
+        }
+
+        .nav-link:hover {
+            background-color: #f0f0f0 !important; /* Светло-серый при наведении (необязательно) */
+        }
+
+        <!--
+        Карточка для блока внизу удалена по запросу
+    </style>
+    <meta charset="UTF-8">
+    <!-- Подключение шрифта Open Sans с Google Fonts -->
+    <link href="https://googleapis.com"
+          rel="stylesheet">
+    <style>
+        body, html {
+            font-family: 'Open Sans', Arial, sans-serif !important;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <style>
+        .contact-info {
+            position: absolute;
+            right: 32px;
+            top: 0;
+            color: #000000;
+            padding: 18px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.6;
+            text-align: right;
+            z-index: 20;
+            min-width: 250px;
+        }
+
+        .contact-info-bottom {
+            position: fixed;
+            right: 32px;
+            bottom: 60px;
+            color: #000000;
+            padding: 18px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.6;
+            text-align: right;
+            z-index: 999;
+            min-width: 250px;
+            max-width: 350px;
+            margin: 0;
+        }
+
+        .contact-info2 {
+            position: absolute;
+            right: -1270px;
+            top: -100px;
+            color: #000000;
+            padding: 18px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.6;
+            text-align: right;
+            z-index: 20;
+            min-width: 250px;
+        }
+
+        /* Расширяем страницу вниз на 400px */
+        body {
+            min-height: calc(100vh + 400px) !important;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f8fb;
+        }
+
+        .navbar {
+            background-color: #234567;
+            padding: 0;
+            margin: 0;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-container {
+            position: absolute;
+            left: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 115px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 105px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav-item {
+            margin: 0;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 28px 56px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+            font-size: 24px;
+        }
+
+        .nav-link:hover {
+            background-color: #466889;
+        }
+
+        .content {
+            padding: 40px 24px;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #234567;
+        }
+
+        /* --- СТИЛИЗАЦИЯ ИНТЕГРИРОВАННОГО КАЛЬКУЛЯТОРА --- */
+        .calc-card {
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 28px;
+            width: 100%;
+            max-width: 480px;
+            box-sizing: border-box;
+            font-family: 'Open Sans', Arial, sans-serif;
+            margin: 10px auto 0 auto;
+            border: 1px solid #eef2f5;
+        }
+
+        .calc-title {
+            font-size: 1.35em;
+            font-weight: 700;
+            color: #234567;
+            margin-top: 0;
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .calc-group {
+            margin-bottom: 16px;
+        }
+
+        .calc-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #222222;
+            text-align: left;
+        }
+
+        .calc-select, .calc-input {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #333333;
+            transition: border-color 0.2s;
+        }
+
+        .calc-select:focus, .calc-input:focus {
+            outline: none;
+            border-color: #1565c0;
+        }
+
+        .calc-checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #222222;
+            user-select: none;
+        }
+
+        .calc-checkbox {
+            margin-right: 12px;
+            width: 19px;
+            height: 19px;
+            cursor: pointer;
+        }
+
+        .calc-btn {
+            width: 100%;
+            background-color: #1565c0;
+            color: #ffffff;
+            border: none;
+            padding: 13px;
+            border-radius: 8px;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+
+        .calc-btn:hover {
+            background-color: #0d47a1;
+        }
+
+        .calc-result {
+            margin-top: 22px;
+            padding: 14px;
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .calc-result-title {
+            color: #2e7d32;
+            font-size: 0.95em;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .calc-result-value {
+            color: #1b5e20;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+    </style>
+    <!-- Добавление логотипа компании -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                if (!navbar.querySelector('.logo-container')) {
+                    const logoContainer = document.createElement('div');
+                    logoContainer.className = 'logo-container';
+                    logoContainer.style.left = '-8px';
+
+                    // Добавляем ссылку вокруг логотипа
+                    const logoLink = document.createElement('a');
+                    logoLink.href = "index.html";
+                    logoLink.style.display = 'inline-block';
+                    logoLink.style.cursor = 'pointer';
+                    // По желанию: чтобы не было лишних эффектов при фокусе и visited:
+                    logoLink.style.outline = 'none';
+                    logoLink.style.textDecoration = 'none';
+
+                    const img = document.createElement('img');
+                    img.src = 'images/partner-logo.png';
+                    img.alt = 'Партнёр-Экспресс Логотип';
+                    img.className = 'logo-img';
+                    img.style.height = '400px';
+
+                    logoLink.appendChild(img);
+                    logoContainer.appendChild(logoLink);
+                    navbar.appendChild(logoContainer);
+                }
+            }
+        });
+    </script>
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
-            <li class="nav-item"><a href="description.html" class="nav-link">О Компании</a></li>
-            <li class="nav-item"><a href="calculator.html" class="nav-link">Калькулятор</a></li>
-        </ul>
-    </nav>
- 
- <div class="contact-info">
+<nav class="navbar">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="description.html" class="nav-link">О Компании</a></li>
+        <li class="nav-item"><a href="calculator.html" class="nav-link">Калькулятор</a></li>
+    </ul>
+</nav>
+
+<div class="contact-info">
     Позвоните нам<br>
     +7 (913)-917-06-26<br>
     +7 (383)-299-06-26
 </div>
- <!-- Блок для удобного редактирования и размещения текста -->
- <div class="text-workspace" style="min-height:400px; width:100%; padding: 24px; box-sizing: border-box;">
- 
+<!-- Блок для удобного редактирования и размещения текста -->
+<div class="text-workspace" style="min-height:400px; width:100%; padding: 24px; box-sizing: border-box;">
+
     <!-- БЛОК ИНТЕГРИРОВАННОГО КАЛЬКУЛЯТОРА -->
     <div class="calc-card">
         <h3 class="calc-title">Быстрый расчет доставки</h3>
-        
+
         <div class="calc-group">
             <label for="calcCity">Город назначения:</label>
             <select id="calcCity" class="calc-select">
@@ -417,100 +449,102 @@ rel="stylesheet">
     </div>
     <!-- КОНЕЦ БЛОКА КАЛЬКУЛЯТОРА -->
 
- </div>
- </div>
- 
- <div style="height: 500px; width: 100%; background: #fff; position: relative;">
- <div style="position: absolute; top: -100px; left: 24px;">
- <img 
-src="/images/partner-logo.png"
- alt="Партнёр-Экспресс Логотип (правый верхний угол)"
- style="height: 400px; font-family: 'Open Sans', sans-serif;">
- 
- <div style="font-size: 0.82em; color: #222; position: absolute; top: 250px; left: 55px; 
+</div>
+</div>
+
+<div style="height: 500px; width: 100%; background: #fff; position: relative;">
+    <div style="position: absolute; top: -100px; left: 24px;">
+        <img
+                src="images/partner-logo.png"
+                alt="Партнёр-Экспресс Логотип (правый верхний угол)"
+                style="height: 400px; font-family: 'Open Sans', sans-serif;">
+
+        <div style="font-size: 0.82em; color: #222; position: absolute; top: 250px; left: 55px;
 font-family: 'Open Sans', sans-serif; text-align: left; line-height: 2;">
- <div style="margin-top: 0;"><b>Новосибирск</b></div>
- <div style="margin-top: 7px;"><b>Офис:</b> 630005, Новосибирская обл, 
-Новосибирск г, Некрасова ул, д. 48, оф. 106</div>
- <div style="margin-top: 7px;"><b>Склад:</b> 630005, Новосибирская обл, 
-Новосибирск г, Панфиловцев ул, д. 73/1, оф. 22</div>
- </div>
- <div style="position: absolute; top: 250px; left: 450px; font-size: 0.82em; color: #222; 
+            <div style="margin-top: 0;"><b>Новосибирск</b></div>
+            <div style="margin-top: 7px;"><b>Офис:</b> 630005, Новосибирская обл,
+                Новосибирск г, Некрасова ул, д. 48, оф. 106
+            </div>
+            <div style="margin-top: 7px;"><b>Склад:</b> 630005, Новосибирская обл,
+                Новосибирск г, Панфиловцев ул, д. 73/1, оф. 22
+            </div>
+        </div>
+        <div style="position: absolute; top: 250px; left: 450px; font-size: 0.82em; color: #222;
 font-family: 'Open Sans', sans-serif; text-align: left; line-height: 2;">
- <div style="margin-top: 0; white-space: nowrap;">
- <b>ОГРН:</b> 1105476029064
- </div>
- 
- <div style="margin-top: 8px;">
- <b>КПП:</b>
- <span style="white-space: nowrap;">540601001</span>
- </div>
- <div style="margin-top: 8px;">
- <b>ИНН:</b>
- <span style="white-space: nowrap;">5407454536</span>
- </div>
- <div class="contact-info2">
- Позвоните нам<br>
- +7 (913)-917-06-26<br>
- +7 (383)-299-06-26<br>
- <br>
- avto_sever@mail.ru<br>
- partner-express18@mail.ru<br>
- </div>
- </div>
- </div>
- </div>
+            <div style="margin-top: 0; white-space: nowrap;">
+                <b>ОГРН:</b> 1105476029064
+            </div>
+
+            <div style="margin-top: 8px;">
+                <b>КПП:</b>
+                <span style="white-space: nowrap;">540601001</span>
+            </div>
+            <div style="margin-top: 8px;">
+                <b>ИНН:</b>
+                <span style="white-space: nowrap;">5407454536</span>
+            </div>
+            <div class="contact-info2">
+                Позвоните нам<br>
+                +7 (913)-917-06-26<br>
+                +7 (383)-299-06-26<br>
+                <br>
+                avto_sever@mail.ru<br>
+                partner-express18@mail.ru<br>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
-// Встроенная база тарифов по направлениям компании
-const internalTariffDatabase = {
-    mirny: {
-        avia:  { tnp: { kg: 330, m3: 45000 }, prod: { kg: 340, m3: 45000 } },
-        avto:  { tnp: { kg: 65,  m3: 17500 }, prod: { kg: 67,  m3: 17500 } },
-        truba: { tnp: { kg: 150, m3: 45000 }, prod: { kg: 150, m3: 45000 } }
-    },
-    udachny: {
-        avia:  { tnp: { kg: 350, m3: 50000 }, prod: { kg: 370, m3: 50000 } },
-        avto:  { tnp: { kg: 70,  m3: 18500 }, prod: { kg: 75,  m3: 18500 } },
-        truba: { tnp: { kg: 100, m3: 40000 }, prod: { kg: 100, m3: 40000 } }
-    },
-    ayhal: {
-        avia:  { tnp: { kg: 360, m3: 50200 }, prod: { kg: 370, m3: 50200 } },
-        avto:  { tnp: { kg: 70,  m3: 18500 }, prod: { kg: 75,  m3: 18500 } },
-        truba: { tnp: { kg: 100, m3: 48000 }, prod: { kg: 100, m3: 48000 } }
+    // Встроенная база тарифов по направлениям компании
+    const internalTariffDatabase = {
+        mirny: {
+            avia: {tnp: {kg: 330, m3: 45000}, prod: {kg: 340, m3: 45000}},
+            avto: {tnp: {kg: 65, m3: 17500}, prod: {kg: 67, m3: 17500}},
+            truba: {tnp: {kg: 150, m3: 45000}, prod: {kg: 150, m3: 45000}}
+        },
+        udachny: {
+            avia: {tnp: {kg: 350, m3: 50000}, prod: {kg: 370, m3: 50000}},
+            avto: {tnp: {kg: 70, m3: 18500}, prod: {kg: 75, m3: 18500}},
+            truba: {tnp: {kg: 100, m3: 40000}, prod: {kg: 100, m3: 40000}}
+        },
+        ayhal: {
+            avia: {tnp: {kg: 360, m3: 50200}, prod: {kg: 370, m3: 50200}},
+            avto: {tnp: {kg: 70, m3: 18500}, prod: {kg: 75, m3: 18500}},
+            truba: {tnp: {kg: 100, m3: 48000}, prod: {kg: 100, m3: 48000}}
+        }
+    };
+
+    function executeCalculation() {
+        const selectedCity = document.getElementById('calcCity').value;
+        const selectedTransport = document.getElementById('calcTransport').value;
+        const selectedType = document.getElementById('calcType').value;
+        const inputWeight = parseFloat(document.getElementById('calcWeight').value) || 0;
+        const inputVolume = parseFloat(document.getElementById('calcVolume').value) || 0;
+        const inputPieces = parseInt(document.getElementById('calcPieces').value) || 0;
+        const hasPackage = document.getElementById('calcPackage').checked;
+
+        const priceMatrix = internalTariffDatabase[selectedCity][selectedTransport][selectedType];
+
+        const weightSum = inputWeight * priceMatrix.kg;
+        const volumeSum = inputVolume * priceMatrix.m3;
+
+        // Выбор максимальной стоимости между физическим весом и объемом
+        let totalBaseSum = Math.max(weightSum, volumeSum);
+
+        // Динамический расчет упаковки: 100 рублей за каждое указанное место груза
+        if (hasPackage && totalBaseSum > 0 && inputPieces > 0) {
+            totalBaseSum += (inputPieces * 100);
+        }
+
+        const calculatedFinalPrice = Math.round(totalBaseSum);
+
+        const uiResultBox = document.getElementById('calcResultBox');
+        const uiTotalSpan = document.getElementById('calcTotalValue');
+
+        uiTotalSpan.textContent = calculatedFinalPrice.toLocaleString('ru-RU');
+        uiResultBox.style.display = 'block';
     }
-};
-
-function executeCalculation() {
-    const selectedCity = document.getElementById('calcCity').value;
-    const selectedTransport = document.getElementById('calcTransport').value;
-    const selectedType = document.getElementById('calcType').value;
-    const inputWeight = parseFloat(document.getElementById('calcWeight').value) || 0;
-    const inputVolume = parseFloat(document.getElementById('calcVolume').value) || 0;
-    const inputPieces = parseInt(document.getElementById('calcPieces').value) || 0;
-    const hasPackage = document.getElementById('calcPackage').checked;
-
-    const priceMatrix = internalTariffDatabase[selectedCity][selectedTransport][selectedType];
-    
-    const weightSum = inputWeight * priceMatrix.kg;
-    const volumeSum = inputVolume * priceMatrix.m3;
-    
-    // Выбор максимальной стоимости между физическим весом и объемом
-    let totalBaseSum = Math.max(weightSum, volumeSum);
-    
-    // Динамический расчет упаковки: 100 рублей за каждое указанное место груза
-    if (hasPackage && totalBaseSum > 0 && inputPieces > 0) {
-        totalBaseSum += (inputPieces * 100); 
-    }
-
-    const calculatedFinalPrice = Math.round(totalBaseSum);
-
-    const uiResultBox = document.getElementById('calcResultBox');
-    const uiTotalSpan = document.getElementById('calcTotalValue');
-    
-    uiTotalSpan.textContent = calculatedFinalPrice.toLocaleString('ru-RU');
-    uiResultBox.style.display = 'block';
-}
 </script>
 </body>
 </html>
