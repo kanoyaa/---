@@ -120,7 +120,7 @@ body {
 
 .logo-container {
     position: absolute;
-    left: 28px;
+    left: -8px;
     top: 50%;
     transform: translateY(-50%);
     height: 115px;
@@ -128,8 +128,15 @@ body {
     align-items: center;
 }
 
+.logo-container a {
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
 .logo-img {
-    height: 105px;
+    height: 400px;
     width: auto;
     object-fit: contain;
 }

@@ -13,41 +13,14 @@
     <!-- Общие стили сайта -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Добавление логотипа компании -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navbar = document.querySelector('.navbar');
-            if (navbar) {
-                if (!navbar.querySelector('.logo-container')) {
-                    const logoContainer = document.createElement('div');
-                    logoContainer.className = 'logo-container';
-                    logoContainer.style.left = '-8px';
-
-                    // Добавляем ссылку вокруг логотипа
-                    const logoLink = document.createElement('a');
-                    logoLink.href = "index.html";
-                    logoLink.style.display = 'inline-block';
-                    logoLink.style.cursor = 'pointer';
-                    // По желанию: чтобы не было лишних эффектов при фокусе и visited:
-                    logoLink.style.outline = 'none';
-                    logoLink.style.textDecoration = 'none';
-
-                    const img = document.createElement('img');
-                    img.src = 'images/partner-logo.png';
-                    img.alt = 'Партнёр-Экспресс Логотип';
-                    img.className = 'logo-img';
-                    img.style.height = '400px';
-
-                    logoLink.appendChild(img);
-                    logoContainer.appendChild(logoLink);
-                    navbar.appendChild(logoContainer);
-                }
-            }
-        });
-    </script>
 </head>
 <body>
 <nav class="navbar">
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="images/partner-logo.png" alt="Партнёр-Экспресс Логотип" class="logo-img">
+        </a>
+    </div>
     <ul class="nav-list">
         <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
         <li class="nav-item"><a href="description.html" class="nav-link">О Компании</a></li>
