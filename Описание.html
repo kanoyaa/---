@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПАРТНЁР-ЭКСПРЕСС О Компании</title>
+    
+    <!-- Подключение шрифта Open Sans с Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <style>
+        body {
+            position: relative;
+            min-height: h;
+            margin: 0;
+            z-index: 0;
+        }
+        
+        /* Карточка с контактами (оригинал) */
+        .contact-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(44, 44, 44, 0.07), 0 2px 8px rgba(30, 30, 30, 0.06);
+            padding: 32px 28px;
+            max-width: 420px;
+            margin: 36px auto 0 auto;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.1em;
+            color: #222;
+            line-height: 1.8;
+            position: relative;
+            z-index: 5;
+        }
+
+        .contact-card-title {
+            font-size: 1.37em;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: #234567;
+        }
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* Фоновое изображение без оранжевого градиента */
+    background: url('C:/Users/kanoyaa/Desktop/сайт/images/фон.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    opacity: 0.4; /* Прозрачность всей композиции */
+    pointer-events: none;
+
+}
+
+        .navbar {
+            background-color: #ffffff !important; /* Белый фон */
+        }
+
+        .nav-link {
+            color: #000000 !important; /* Чёрный текст */
+        }
+
+        .nav-link:hover {
+            background-color: #f0f0f0 !important; /* Светло-серый при наведении */
+        }
+    </style>
+
+    <style>
+        body, html {
+            font-family: 'Open Sans', Arial, sans-serif !important;
+        }
+    </style>
+
+    <style>
+        .contact-info {
+            position: absolute;
+            right: 32px;
+            top: 0;
+            color: #000000;
+            padding: 18px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.6;
+            text-align: right;
+            z-index: 20;
+            min-width: 250px;
+        }
+
+        .contact-info-bottom {
+            position: fixed;
+            right: 32px;
+            bottom: 60px;
+            color: #000000;
+            padding: 18px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.6;
+            text-align: right;
+            z-index: 999;
+            min-width: 250px;
+            max-width: 350px;
+            margin: 0;
+        }
+    </style>
+
+    <style>
+        .contact-info2 {
+            position: absolute;
+            right: -1270px;
+            top: -100px;
+            color: #000000;
+            padding: 18px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.6;
+            text-align: right;
+            z-index: 20;
+            min-width: 250px;
+        }
+
+        /* Расширяем страницу вниз на 400px */
+        body {
+            min-height: calc(100vh + 400px) !important;
+        }
+    </style>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f8fb;
+        }
+
+        .navbar {
+            background-color: #234567;
+            padding: 0;
+            margin: 0;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-container {
+            position: absolute;
+            left: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 115px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 105px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav-item {
+            margin: 0;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 28px 56px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+            font-size: 24px;
+        }
+
+        .nav-link:hover {
+            background-color: #466889;
+        }
+
+        .content {
+            padding: 40px 24px;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #234567;
+        }
+    </style>
+
+    <!-- Скрипт динамического добавления оригинального логотипа компании -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                if (!navbar.querySelector('.logo-container')) {
+                    const logoContainer = document.createElement('div');
+                    logoContainer.className = 'logo-container';
+                    logoContainer.style.left = '-8px'; 
+
+                    // Добавляем ссылку вокруг логотипа
+                    const logoLink = document.createElement('a');
+                    logoLink.href = "Главная.html";
+                    logoLink.style.display = 'inline-block';
+                    logoLink.style.cursor = 'pointer';
+                    // По желанию: чтобы не было лишних эффектов при фокусе и visited:
+                    logoLink.style.outline = 'none';
+                    logoLink.style.textDecoration = 'none';
+
+                    const img = document.createElement('img');
+                    img.src = 'C:/Users/kanoyaa/Desktop/сайт/images/Партнер_логотип_04-Photoroom.png';
+                    img.alt = 'Партнёр-Экспресс Логотип';
+                    img.className = 'logo-img';
+                    img.style.height = '400px';
+
+                    logoLink.appendChild(img);
+                    logoContainer.appendChild(logoLink);
+                    navbar.appendChild(logoContainer);
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Навигационная панель -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="Главная.html" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="Описание.html" class="nav-link">О Компании</a></li>
+            <li class="nav-item"><a href="Калькулятор.html" class="nav-link">Калькулятор</a></li>
+        </ul>
+    </nav>
+
+    <!-- Контактная информация вверху -->
+    <div class="contact-info">
+        Позвоните нам<br>
+        +7 (913)-917-06-26<br>
+        +7 (383)-299-06-26
+    </div>
+
+    <!-- Основной контент страницы -->
+    <div class="content" style="display: flex; flex-direction: row; align-items: flex-start; justify-content: center; min-height: 350px;">
+        <!-- Текстовый блок теперь занимает больше пространства -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 2; max-width: 950px;">
+            <p style="font-size: 1.1em; text-align: center; margin-top: 26px; max-width: 900px; line-height: 1.75;">
+                <b>ПАРТНЁР-ЭКСПРЕСС</b> — специализированная логистическая компания, осуществляющая регулярную круглогодичную доставку грузов и посылок из Новосибирска в северные города Республики Саха (Якутия): Мирный, Удачный и Айхал.<br>
+                <br>
+                 С 2023 года компания обеспечивает надежное транспортное сообщение с труднодоступными регионами Севера, предлагая клиентам оптимальные логистические решения. В зависимости от срочности, типа и габаритов отправлений перевозка осуществляется как быстрой авиацией, так и экономичным автомобильным транспортом.<br>
+                 <br>
+                 Компания принимает к отправке самые разные категории грузов — от сборных посылок и товаров народного потребления до продуктов питания, гарантируя строгое соблюдение температурного режима, сохранность на всех этапах пути и четкие сроки доставки в суровых климатических условиях.<br>
+                 <br>
+            </p>
+            <!-- Блок для удобного редактирования и размещения текста -->
+            <div class="text-workspace" style="min-height:400px; width:100%; padding: 24px; box-sizing: border-box;">
+                <!-- Сюда в дальнейшем можно будет вставить структуру калькулятора -->
+            </div>
+        </div>
+        <!-- Картинка правее, теперь увеличена и больше не смещает текст. Опущена на уровень второго абзаца. -->
+        <div style="flex: 0 0 480px; display: flex; align-items: flex-start; justify-content: flex-end; margin-left: 10px;">
+            <img 
+                src="C:/Users/kanoyaa/Desktop/сайт/images/descript.jpg" 
+                alt="Описание" 
+                style="max-width: 460px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); display: block; margin-top: 240px;"
+            >
+        </div>
+
+    </div>
+
+    <!-- Подвал страницы -->
+    <div style="height: 700px; width: 100%; background: #fff; position: relative;">
+        <div style="position: absolute; top: -100px; left: 24px;">
+            <img src="C:/Users/kanoyaa/Desktop/сайт/images/Партнер_логотип_04-Photoroom.png" alt="Партнёр-Экспресс Логотип (правый верхний угол)" style="height: 400px; font-family: 'Open Sans', sans-serif;">
+            
+            <div style="font-size: 0.82em; color: #222; position: absolute; top: 250px; left: 55px; font-family: 'Open Sans', sans-serif; text-align: left; line-height: 2;">
+                <div style="margin-top: 0;"><b>Новосибирск</b></div>
+                <div style="margin-top: 7px;"><b>Офис:</b> 630005, Новосибирская обл, Новосибирск г, Некрасова ул, д. 48, оф. 106</div>
+                <div style="margin-top: 7px;"><b>Склад:</b> 630005, Новосибирская обл, Новосибирск г, Панфиловцев ул, д. 73/1, оф. 22</div>
+            </div>
+            
+            <div style="position: absolute; top: 250px; left: 450px; font-size: 0.82em; color: #222; font-family: 'Open Sans', sans-serif; text-align: left; line-height: 2;">
+                <div style="margin-top: 0; white-space: nowrap;"><b>ОГРН:</b> 1105476029064</div>
+                <div style="margin-top: 8px;"><b>КПП:</b> <span style="white-space: nowrap;">540601001</span></div>
+                <div style="margin-top: 8px;"><b>ИНН:</b> <span style="white-space: nowrap;">5407454536</span></div>
+                
+                <div class="contact-info2">
+                    Позвоните нам<br>
+                    +7 (913)-917-06-26<br>
+                    +7 (383)-299-06-26<br><br>
+                    avto_sever@mail.ru<br>
+                    partner-express18@mail.ru
+                </div>
