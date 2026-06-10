@@ -1,459 +1,473 @@
-/* Общие стили сайта ПАРТНЁР-ЭКСПРЕСС */
-
-body {
-    position: relative;
-    min-height: 100vh;
-    margin: 0;
-    z-index: 0;
-}
-
-body, html {
-    font-family: 'Open Sans', Arial, sans-serif !important;
-}
-
-/* Карточка с контактами (оригинал) */
-.contact-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 32px rgba(44, 44, 44, 0.07), 0 2px 8px rgba(30, 30, 30, 0.06);
-    padding: 32px 28px;
-    max-width: 420px;
-    margin: 36px auto 0 auto;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.1em;
-    color: #222;
-    line-height: 1.8;
-    position: relative;
-    z-index: 5;
-}
-
-.contact-card-title {
-    font-size: 1.37em;
-    font-weight: 600;
-    margin-bottom: 14px;
-    color: #234567;
-}
-
-/* Фоновое изображение */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    background: url('images/back.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    opacity: 0.4; /* Прозрачность всей композиции */
-    pointer-events: none;
-}
-
-/* Контактные блоки */
-.contact-info {
-    position: absolute;
-    right: 32px;
-    top: 0;
-    color: #000000;
-    padding: 18px 24px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.6;
-    text-align: right;
-    z-index: 20;
-    min-width: 250px;
-}
-
-.contact-info-bottom {
-    position: fixed;
-    right: 32px;
-    bottom: 60px;
-    color: #000000;
-    padding: 18px 24px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.6;
-    text-align: right;
-    z-index: 999;
-    min-width: 250px;
-    max-width: 350px;
-    margin: 0;
-}
-
-.contact-info2 {
-    position: absolute;
-    right: -1270px;
-    top: -100px;
-    color: #000000;
-    padding: 18px 24px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.6;
-    text-align: right;
-    z-index: 20;
-    min-width: 250px;
-}
-
-/* Расширяем страницу вниз на 400px */
-body {
-    min-height: calc(100vh + 400px) !important;
-    background-color: #f4f8fb;
-}
-
-/* Навигационная панель */
-.navbar {
-    background-color: #ffffff !important; /* Белый фон */
-    padding: 0;
-    margin: 0;
-    height: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.logo-container {
-    position: absolute;
-    left: -8px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 115px;
-    display: flex;
-    align-items: center;
-}
-
-.logo-container a {
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    text-decoration: none;
-}
-
-.logo-img {
-    height: 400px;
-    width: auto;
-    object-fit: contain;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.nav-item {
-    margin: 0;
-}
-
-.nav-link {
-    display: block;
-    padding: 28px 56px;
-    color: #000000 !important; /* Чёрный текст */
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2s;
-    font-size: 24px;
-}
-
-.nav-link:hover {
-    background-color: #f0f0f0 !important; /* Светло-серый при наведении */
-}
-
-.content {
-    padding: 40px 24px;
-    max-width: 880px;
-    margin: 0 auto;
-}
-
-h1 {
-    color: #234567;
-}
-
-/* === Утилиты === */
-
-.nowrap {
-    white-space: nowrap;
-}
-
-/* === Рабочее пространство текста === */
-
-.text-workspace {
-    min-height: 400px;
-    width: 100%;
-    padding: 24px;
-    box-sizing: border-box;
-}
-
-/* === Главная: контент === */
-
-.content--home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 350px;
-}
-
-.hero-title {
-    font-size: 2.7em;
-    text-align: center;
-    color: #000000;
-    margin-top: 56px;
-}
-
-.hero-subtitle {
-    font-size: 1.6em;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.hero-cta {
-    text-align: center;
-    margin-top: 28px;
-}
-
-.btn-primary {
-    font-size: 1.1em;
-    padding: 10px 24px;
-    background: #1565c0;
-    border-radius: 5px;
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    outline: none;
-    box-shadow: none;
-}
-
-.btn-primary:hover {
-    background: #0d47a1;
-}
-
-/* === О Компании: контент === */
-
-.content--about {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    min-height: 350px;
-}
-
-.content-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 2;
-    max-width: 950px;
-}
-
-.about-text {
-    font-size: 1.1em;
-    text-align: center;
-    margin-top: 26px;
-    max-width: 900px;
-    line-height: 1.75;
-}
-
-.content-photo {
-    flex: 0 0 480px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    margin-left: 10px;
-}
-
-.content-photo img {
-    max-width: 460px;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    display: block;
-    margin-top: 240px;
-}
-
-/* === Калькулятор: группа с чекбоксом === */
-
-.calc-group--spaced {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-/* === Подвал === */
-
-.footer {
-    width: 100%;
-    background: #fff;
-    position: relative;
-}
-
-.footer--home,
-.footer--calc {
-    height: 500px;
-}
-
-.footer--about {
-    height: 700px;
-}
-
-.footer-inner {
-    position: absolute;
-    top: -100px;
-    left: 24px;
-}
-
-.footer-logo {
-    height: 400px;
-}
-
-.footer-address {
-    font-size: 0.82em;
-    color: #222;
-    position: absolute;
-    top: 250px;
-    left: 55px;
-    font-family: 'Open Sans', sans-serif;
-    text-align: left;
-    line-height: 2;
-}
-
-.footer-address div + div {
-    margin-top: 7px;
-}
-
-.footer-requisites {
-    position: absolute;
-    top: 250px;
-    left: 450px;
-    font-size: 0.82em;
-    color: #222;
-    font-family: 'Open Sans', sans-serif;
-    text-align: left;
-    line-height: 2;
-}
-
-.footer-requisites div + div {
-    margin-top: 8px;
-}
-
-/* --- Стилизация интегрированного калькулятора --- */
-.calc-card {
-    background: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    padding: 28px;
-    width: 100%;
-    max-width: 480px;
-    box-sizing: border-box;
-    font-family: 'Open Sans', Arial, sans-serif;
-    margin: 10px auto 0 auto;
-    border: 1px solid #eef2f5;
-}
-
-.calc-title {
-    font-size: 1.35em;
-    font-weight: 700;
-    color: #234567;
-    margin-top: 0;
-    margin-bottom: 22px;
-    text-align: center;
-}
-
-.calc-group {
-    margin-bottom: 16px;
-}
-
-.calc-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 0.95em;
-    font-weight: 600;
-    color: #222222;
-    text-align: left;
-}
-
-.calc-select, .calc-input {
-    width: 100%;
-    padding: 11px 14px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-size: 15px;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    color: #333333;
-    transition: border-color 0.2s;
-}
-
-.calc-select:focus, .calc-input:focus {
-    outline: none;
-    border-color: #1565c0;
-}
-
-.calc-checkbox-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 0.95em;
-    font-weight: 600;
-    color: #222222;
-    user-select: none;
-}
-
-.calc-checkbox {
-    margin-right: 12px;
-    width: 19px;
-    height: 19px;
-    cursor: pointer;
-}
-
-.calc-btn {
-    width: 100%;
-    background-color: #1565c0;
-    color: #ffffff;
-    border: none;
-    padding: 13px;
-    border-radius: 8px;
-    font-size: 1.05em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 10px;
-}
-
-.calc-btn:hover {
-    background-color: #0d47a1;
-}
-
-.calc-result {
-    margin-top: 22px;
-    padding: 14px;
-    background-color: #e8f5e9;
-    border: 1px solid #c8e6c9;
-    border-radius: 8px;
-    text-align: center;
-    display: none;
-}
-
-.calc-result-title {
-    color: #2e7d32;
-    font-size: 0.95em;
-    margin-bottom: 4px;
-    font-weight: 500;
-}
-
-.calc-result-value {
-    color: #1b5e20;
-    font-size: 1.6em;
-    font-weight: 700;
-}
+/* Общие стили сайта ПАРТНЁР-ЭКСПРЕСС */
+
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    z-index: 0;
+}
+
+body, html {
+    font-family: 'Open Sans', Arial, sans-serif !important;
+}
+
+/* Карточка с контактами (оригинал) */
+.contact-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 32px rgba(44, 44, 44, 0.07), 0 2px 8px rgba(30, 30, 30, 0.06);
+    padding: 32px 28px;
+    max-width: 420px;
+    margin: 36px auto 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    color: #222;
+    line-height: 1.8;
+    position: relative;
+    z-index: 5;
+}
+
+.contact-card-title {
+    font-size: 1.37em;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #234567;
+}
+
+/* Фоновое изображение */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url('images/back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    opacity: 0.4; /* Прозрачность всей композиции */
+    pointer-events: none;
+}
+
+/* Контактные блоки */
+.contact-info {
+    position: absolute;
+    right: 32px;
+    top: 0;
+    color: #000000;
+    padding: 18px 24px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: right;
+    z-index: 20;
+    min-width: 250px;
+}
+
+.contact-info-bottom {
+    position: fixed;
+    right: 32px;
+    bottom: 60px;
+    color: #000000;
+    padding: 18px 24px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: right;
+    z-index: 999;
+    min-width: 250px;
+    max-width: 350px;
+    margin: 0;
+}
+
+.contact-info2 {
+    position: absolute;
+    right: -1270px;
+    top: -100px;
+    color: #000000;
+    padding: 18px 24px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: right;
+    z-index: 20;
+    min-width: 250px;
+}
+
+/* Расширяем страницу вниз на 400px */
+body {
+    min-height: calc(100vh + 400px) !important;
+    background-color: #f4f8fb;
+}
+
+/* Навигационная панель */
+.navbar {
+    background-color: #ffffff !important; /* Белый фон */
+    padding: 0;
+    margin: 0;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 115px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container a {
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 400px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 28px 56px;
+    color: #000000 !important; /* Чёрный текст */
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+    font-size: 24px;
+}
+
+.nav-link:hover {
+    background-color: #f0f0f0 !important; /* Светло-серый при наведении */
+}
+
+.content {
+    padding: 40px 24px;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #234567;
+}
+
+/* === Контактные ссылки === */
+
+.contact-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-link:hover {
+    color: #1565c0;
+    border-bottom-color: #1565c0;
+}
+
+/* === Утилиты === */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* === Рабочее пространство текста === */
+
+.text-workspace {
+    min-height: 400px;
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* === Главная: контент === */
+
+.content--home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+}
+
+.hero-title {
+    font-size: 2.7em;
+    text-align: center;
+    color: #000000;
+    margin-top: 56px;
+}
+
+.hero-subtitle {
+    font-size: 1.6em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hero-cta {
+    text-align: center;
+    margin-top: 28px;
+}
+
+.btn-primary {
+    font-size: 1.1em;
+    padding: 10px 24px;
+    background: #1565c0;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background: #0d47a1;
+}
+
+/* === О Компании: контент === */
+
+.content--about {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 350px;
+}
+
+.content-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+    max-width: 950px;
+}
+
+.about-text {
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 26px;
+    max-width: 900px;
+    line-height: 1.75;
+}
+
+.content-photo {
+    flex: 0 0 480px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-left: 10px;
+}
+
+.content-photo img {
+    max-width: 460px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    display: block;
+    margin-top: 240px;
+}
+
+/* === Калькулятор: группа с чекбоксом === */
+
+.calc-group--spaced {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* === Подвал === */
+
+.footer {
+    width: 100%;
+    background: #fff;
+    position: relative;
+}
+
+.footer--home,
+.footer--calc {
+    height: 500px;
+}
+
+.footer--about {
+    height: 700px;
+}
+
+.footer-inner {
+    position: absolute;
+    top: -100px;
+    left: 24px;
+}
+
+.footer-logo {
+    height: 400px;
+}
+
+.footer-address {
+    font-size: 0.82em;
+    color: #222;
+    position: absolute;
+    top: 250px;
+    left: 55px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    line-height: 2;
+}
+
+.footer-address div + div {
+    margin-top: 7px;
+}
+
+.footer-requisites {
+    position: absolute;
+    top: 250px;
+    left: 450px;
+    font-size: 0.82em;
+    color: #222;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    line-height: 2;
+}
+
+.footer-requisites div + div {
+    margin-top: 8px;
+}
+
+/* --- Стилизация интегрированного калькулятора --- */
+.calc-card {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 28px;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 10px auto 0 auto;
+    border: 1px solid #eef2f5;
+}
+
+.calc-title {
+    font-size: 1.35em;
+    font-weight: 700;
+    color: #234567;
+    margin-top: 0;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.calc-group {
+    margin-bottom: 16px;
+}
+
+.calc-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #222222;
+    text-align: left;
+}
+
+.calc-select, .calc-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #333333;
+    transition: border-color 0.2s;
+}
+
+.calc-select:focus, .calc-input:focus {
+    outline: none;
+    border-color: #1565c0;
+}
+
+.calc-checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #222222;
+    user-select: none;
+}
+
+.calc-checkbox {
+    margin-right: 12px;
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+}
+
+.calc-btn {
+    width: 100%;
+    background-color: #1565c0;
+    color: #ffffff;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.calc-btn:hover {
+    background-color: #0d47a1;
+}
+
+.calc-result {
+    margin-top: 22px;
+    padding: 14px;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+.calc-result-title {
+    color: #2e7d32;
+    font-size: 0.95em;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.calc-result-value {
+    color: #1b5e20;
+    font-size: 1.6em;
+    font-weight: 700;
+}
