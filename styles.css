@@ -459,6 +459,19 @@ h1 {
     display: none;
 }
 
+.calc-result--error {
+    background-color: #fff3e0;
+    border-color: #ffe0b2;
+}
+
+.calc-result--error .calc-result-title {
+    color: #e65100;
+}
+
+.calc-result--error .calc-result-value {
+    display: none;
+}
+
 .calc-result-title {
     color: #2e7d32;
     font-size: 0.95em;

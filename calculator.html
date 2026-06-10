@@ -125,56 +125,6 @@
     </div>
 </div>
 
-<script>
-    // Встроенная база тарифов по направлениям компании
-    const internalTariffDatabase = {
-        mirny: {
-            avia: {tnp: {kg: 330, m3: 45000}, prod: {kg: 340, m3: 45000}},
-            avto: {tnp: {kg: 65, m3: 17500}, prod: {kg: 67, m3: 17500}},
-            truba: {tnp: {kg: 150, m3: 45000}, prod: {kg: 150, m3: 45000}}
-        },
-        udachny: {
-            avia: {tnp: {kg: 350, m3: 50000}, prod: {kg: 370, m3: 50000}},
-            avto: {tnp: {kg: 70, m3: 18500}, prod: {kg: 75, m3: 18500}},
-            truba: {tnp: {kg: 100, m3: 40000}, prod: {kg: 100, m3: 40000}}
-        },
-        ayhal: {
-            avia: {tnp: {kg: 360, m3: 50200}, prod: {kg: 370, m3: 50200}},
-            avto: {tnp: {kg: 70, m3: 18500}, prod: {kg: 75, m3: 18500}},
-            truba: {tnp: {kg: 100, m3: 48000}, prod: {kg: 100, m3: 48000}}
-        }
-    };
-
-    function executeCalculation() {
-        const selectedCity = document.getElementById('calcCity').value;
-        const selectedTransport = document.getElementById('calcTransport').value;
-        const selectedType = document.getElementById('calcType').value;
-        const inputWeight = parseFloat(document.getElementById('calcWeight').value) || 0;
-        const inputVolume = parseFloat(document.getElementById('calcVolume').value) || 0;
-        const inputPieces = parseInt(document.getElementById('calcPieces').value) || 0;
-        const hasPackage = document.getElementById('calcPackage').checked;
-
-        const priceMatrix = internalTariffDatabase[selectedCity][selectedTransport][selectedType];
-
-        const weightSum = inputWeight * priceMatrix.kg;
-        const volumeSum = inputVolume * priceMatrix.m3;
-
-        // Выбор максимальной стоимости между физическим весом и объемом
-        let totalBaseSum = Math.max(weightSum, volumeSum);
-
-        // Динамический расчет упаковки: 100 рублей за каждое указанное место груза
-        if (hasPackage && totalBaseSum > 0 && inputPieces > 0) {
-            totalBaseSum += (inputPieces * 100);
-        }
-
-        const calculatedFinalPrice = Math.round(totalBaseSum);
-
-        const uiResultBox = document.getElementById('calcResultBox');
-        const uiTotalSpan = document.getElementById('calcTotalValue');
-
-        uiTotalSpan.textContent = calculatedFinalPrice.toLocaleString('ru-RU');
-        uiResultBox.style.display = 'block';
-    }
-</script>
+<script src="calculator.js"></script>
 </body>
 </html>
